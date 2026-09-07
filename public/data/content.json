@@ -1,0 +1,116 @@
+{
+  "name": "Mayur Bagul",
+  "role": "Software Engineer",
+  "location": "Boston, United States",
+  "experienceYears": "3.5+",
+  "summary": "I've spent the last 3.5+ years building backend systems in Java, mostly microservices that need to handle a lot of tenants and a lot of data without falling over. I like digging into the unglamorous stuff: why a query is slow, why a service stops scaling past a certain point, why a bug only shows up under load. I write tests because I've been burned by not having them, not because a process told me to.",
+  "resumeUrl": "resume.html",
+  "email": "mbagul30@gmail.com",
+  "links": {
+    "github": "https://github.com/mayurbagul03",
+    "linkedin": "https://www.linkedin.com/in/mbagul/",
+    "leetcode": "https://leetcode.com/u/mayurbagul/",
+    "twitter": ""
+  },
+  "skills": {
+    "Languages": ["Java", "Python", "JavaScript", "TypeScript", "HTML5", "CSS3", "SQL", "NoSQL"],
+    "AI / ML": ["Amazon Bedrock", "SageMaker AI", "LangChain", "Prompt Engineering", "Claude", "Cursor", "ChatGPT"],
+    "Backend & Frameworks": ["Spring Boot", "Spring MVC", "Spring GraphQL", "RESTful Web Services", "FastAPI", "Flask", "Hibernate ORM"],
+    "Architecture & Cloud": ["Microservices", "OOP", "Design Patterns", "AWS", "Azure", "Docker", "Kubernetes", "Apache Kafka"],
+    "AWS Services": ["AWS Lambda", "Amazon S3", "Amazon EC2", "AWS ECS", "AWS EKS", "Amazon DynamoDB", "Amazon SQS", "Amazon API Gateway"],
+    "Databases & Data Tools": ["PostgreSQL", "MySQL", "MongoDB", "BigQuery", "Redis"],
+    "DevOps & Testing": ["Jenkins", "GitHub Actions", "Terraform", "Git", "JUnit", "Mockito", "Pytest", "SonarQube"],
+    "OS & Methodologies": ["Linux (Ubuntu)", "Maven", "Agile (Scrum/Kanban)", "TDD"]
+  },
+  "projects": [
+    {
+      "id": "01",
+      "title": "E-Commerce Website",
+      "description": "A full e-commerce build, catalog, cart, checkout, the works. I spent more time than I expected just getting the data model right, since a messy schema here makes everything downstream harder.",
+      "stack": ["Node.js", "Express", "MongoDB", "JavaScript"],
+      "github": "https://github.com/mayurbagul03/eccomerce-wesite",
+      "demo": ""
+    },
+    {
+      "id": "02",
+      "title": "Expense Tracker App",
+      "description": "A personal finance tracker I built mostly for myself, to log expenses, tag them by category, and see where the money actually goes each month.",
+      "stack": ["JavaScript", "Node.js", "Chart.js"],
+      "github": "https://github.com/mayurbagul03/expenses_app",
+      "demo": ""
+    },
+    {
+      "id": "03",
+      "title": "Student Result Manager",
+      "description": "A backend system for recording and computing student results, with separate access levels so admins and students only see what they should.",
+      "stack": ["Java", "SQL"],
+      "github": "https://github.com/mayurbagul03/Student-result_manager",
+      "demo": ""
+    },
+    {
+      "id": "04",
+      "title": "Distributed API Gateway & Auth Microservice",
+      "description": "An API gateway that handles login and permissions for a set of backend services, so none of them have to deal with auth themselves. Access tokens are short-lived, paired with refresh tokens that rotate on every use, and if an old refresh token ever shows up again, that's a sign it was copied, so every session on that account gets killed. Token state lives in Redis with a TTL matching each token's real lifetime, so nothing builds up and there's no cleanup job to babysit. Each downstream service sits behind a circuit breaker that trips after five failures in a row, and the gateway strips whatever identity headers a client sends and replaces them with its own HMAC-signed ones, so services can trust who's calling without re-checking the token themselves.",
+      "stack": ["Node.js", "Express", "MySQL", "Redis", "Docker"],
+      "github": "https://github.com/mayurbagul03/distributed-api-gateway-auth",
+      "demo": ""
+    },
+    {
+      "id": "05",
+      "title": "Self-Sovereign ID Backend on Blockchain",
+      "description": "Backend services for a decentralized identity system aimed at healthcare, built in Python on Linux, with fault tolerance in mind since these nodes need to keep working independently rather than relying on one central authority. Every verification gets logged, since audit trails matter a lot more here than in a typical app.",
+      "stack": ["Python", "Blockchain", "FastAPI", "Linux"],
+      "github": "https://github.com/mayurbagul03/healthcare-SSI",
+      "demo": ""
+    }
+  ],
+  "experience": [
+    {
+      "role": "Software Engineer",
+      "company": "Innokrit Inventions",
+      "period": "Jun 2022 - Jul 2024",
+      "stack": ["Java", "Spring Boot", "TypeScript", "Elasticsearch", "TDD"],
+      "summary": "Most of my time here went into a data-dissemination microservice built in Java 8 and Spring Boot, plus a time-tracking tool in JavaScript and TypeScript that fixed a recurring payroll headache, and discrepancies dropped 12% once the calculation logic was actually solid. I also moved us off a self-hosted Elasticsearch cluster onto Amazon OpenSearch, which cut query latency by 30% and got us out of the business of babysitting search servers. A good chunk of the job was untangling a legacy monolith into services people could work in without stepping on each other, and that alone cut new-feature turnaround by 40%. I pushed for test-first development on the checkout flow specifically, since that's where a bug actually costs money; we landed at 90% coverage and closed off a raw-SQL injection gap along the way."
+    },
+    {
+      "role": "Software Backend Developer",
+      "company": "Tekno Point / DEPT",
+      "period": "Oct 2021 - Apr 2022",
+      "stack": ["GraphQL", "Kafka", "Spring MVC", "Jenkins"],
+      "summary": "The GraphQL layer here had gotten slow under real traffic, deeply nested queries were hammering the database, so I added batching and caching that dropped downstream load by 90%. I brought Kafka in for event-driven streaming and got a proper CI/CD pipeline running through Jenkins so deployments stopped being a manual chore. On the API side, I rebuilt the RESTful endpoints in Spring MVC with real exception handling and pagination, which shaved 15% off baseline response times."
+    },
+    {
+      "role": "Trainee Software Developer",
+      "company": "Kings Crown Solution LLP",
+      "period": "Jul 2020 - Sep 2021",
+      "stack": ["JavaScript", "React", "Fetch API"],
+      "summary": "This was where I got good at reading a stack trace, I spent a lot of time chasing down front-end and API bugs that QA flagged, using dev tools and server logs to figure out what was actually going wrong. I also got into performance work: profiling, caching, tuning slow database calls. The bigger project was rebuilding a dashboard that was still running on vanilla JavaScript, so I moved it to React with proper async data fetching, which brought page load times down by 25%."
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Python (Basic)",
+      "issuer": "HackerRank",
+      "date": "Aug 2026",
+      "description": "HackerRank's basic Python certification, covering the fundamentals: syntax, data types, control flow.",
+      "stack": ["Python"],
+      "url": "https://www.hackerrank.com/certificates/iframe/b373e36a6cdb"
+    },
+    {
+      "title": "Software Engineer Intern",
+      "issuer": "HackerRank",
+      "date": "",
+      "description": "HackerRank's role-based certification for software engineering interns, mostly testing problem-solving and core programming ability under time pressure.",
+      "stack": ["Problem Solving"],
+      "url": "https://www.hackerrank.com/certificates/iframe/0408abf96ff5"
+    },
+    {
+      "title": "Apache Kafka",
+      "issuer": "HackerRank",
+      "date": "",
+      "description": "Covers the Kafka fundamentals, topics, producers and consumers, and the basics of event-driven streaming.",
+      "stack": ["Apache Kafka"],
+      "url": "#"
+    }
+  ]
+}

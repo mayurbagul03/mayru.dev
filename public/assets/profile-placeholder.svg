@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <rect width="400" height="500" fill="#161B22"/>
+  <rect x="0.5" y="0.5" width="399" height="499" fill="none" stroke="#21262D"/>
+  <line x1="0" y1="0" x2="400" y2="500" stroke="#21262D" stroke-width="1"/>
+  <line x1="400" y1="0" x2="0" y2="500" stroke="#21262D" stroke-width="1"/>
+  <circle cx="200" cy="190" r="70" fill="none" stroke="#F59E0B" stroke-width="2"/>
+  <path d="M90 420 C 90 320, 310 320, 310 420" fill="none" stroke="#F59E0B" stroke-width="2"/>
+  <text x="200" y="470" font-family="monospace" font-size="14" fill="#8B949E" text-anchor="middle">ADD assets/profile.jpg</text>
+</svg>

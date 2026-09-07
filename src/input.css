@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #0d1117;
+    color: #f0f6fc;
+  }
+  ::selection {
+    background-color: rgba(245, 158, 11, 0.35);
+    color: #f0f6fc;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0d1117;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #21262d;
+    border: 2px solid #0d1117;
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #30363d;
+  }
+}
+
+@layer components {
+  .section-tag {
+    @apply flex items-center gap-3 font-mono text-xs tracking-[0.3em] text-amber uppercase mb-10;
+  }
+  .section-tag::after {
+    content: "";
+    @apply h-px flex-1 bg-ink-border;
+  }
+
+  .nav-link {
+    @apply relative font-mono text-sm text-ink_text-muted hover:text-ink_text-primary transition-colors duration-200 py-1;
+  }
+  .nav-link::after {
+    content: "";
+    @apply absolute left-0 -bottom-0.5 h-px w-0 bg-amber transition-all duration-300;
+  }
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
+  .nav-link.active {
+    @apply text-ink_text-primary;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 border border-amber bg-amber/10 px-6 py-3 font-mono text-sm text-amber shadow-md shadow-black/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-amber hover:text-ink hover:shadow-xl hover:shadow-black/40;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 border border-ink-border px-6 py-3 font-mono text-sm text-ink_text-primary shadow-md shadow-black/20 transition-all duration-300 hover:-translate-y-0.5 hover:border-amber hover:text-amber hover:shadow-xl hover:shadow-black/40;
+  }
+
+  .card {
+    @apply border border-ink-border bg-ink-card transition-all duration-300;
+  }
+  .card:hover {
+    @apply border-amber/40;
+  }
+
+  .timeline-dot {
+    @apply transition-colors duration-300;
+  }
+  .timeline-dot.is-active {
+    @apply animate-blink bg-amber;
+  }
+
+  .ticker-text {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.45s ease;
+  }
+  .ticker-text.ticker-leave {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  .ticker-text.ticker-enter-start {
+    transition: none;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px) scale(0.94);
+    transition: opacity 0.5s ease-out, transform 0.75s cubic-bezier(0.34, 1.75, 0.64, 1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  .mask-icon {
+    display: inline-block;
+    background-color: currentColor;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+  }
+
+  .mega-menu {
+    @apply invisible absolute left-1/2 top-full z-40 mt-3 w-[min(92vw,760px)] -translate-x-1/2 translate-y-1 rounded-lg border border-ink-border bg-ink-card p-6 opacity-0 shadow-xl transition-all duration-200 ease-out;
+  }
+  .mega-menu.is-open {
+    @apply visible translate-y-0 opacity-100;
+  }
+
+  .chat-panel {
+    @apply invisible absolute bottom-[4.5rem] right-0 flex h-[28rem] w-[22rem] max-w-[calc(100vw-3rem)] translate-y-2 flex-col overflow-hidden rounded-lg border border-ink-border bg-ink-card opacity-0 shadow-2xl shadow-black/50 transition-all duration-200 ease-out;
+  }
+  .chat-panel.is-open {
+    @apply visible translate-y-0 opacity-100;
+  }
+
+  .tag-pill {
+    @apply border border-amber/50 px-2.5 py-1 font-mono text-[11px] uppercase tracking-wider text-ink_text-muted shadow-sm shadow-black/20 transition-all duration-200;
+  }
+  .tag-pill:hover {
+    @apply border-amber shadow-md shadow-black/30;
+  }
+}

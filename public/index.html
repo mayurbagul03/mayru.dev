@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mayur Bagul — Software Engineer</title>
+    <meta
+      name="description"
+      content="Portfolio of Mayur Bagul, Software Engineer — projects, experience, skills and certifications."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="font-body bg-ink text-ink_text-primary antialiased">
+    <!-- Cursor FX canvas -->
+    <canvas
+      id="cursor-fx-canvas"
+      class="pointer-events-none fixed inset-0 z-50 hidden"
+      aria-hidden="true"
+    ></canvas>
+
+    <!-- NAVBAR -->
+    <header
+      id="site-header"
+      class="fixed top-0 z-50 w-full border-b border-ink-border/0 bg-ink/80 backdrop-blur-md transition-colors duration-300"
+    >
+      <nav
+        class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 lg:px-10"
+      >
+        <a
+          href="#home"
+          class="group flex items-center gap-2 font-display text-lg font-semibold"
+        >
+          <span
+            class="flex h-8 w-8 items-center justify-center rounded-md bg-amber font-display text-sm font-bold text-ink"
+            >MB</span
+          >
+          <span class="hidden sm:inline"
+            >Mayur<span class="text-amber">.</span>dev</span
+          >
+        </a>
+
+        <ul id="nav-links" class="hidden items-center gap-8 md:flex">
+          <li>
+            <a href="#about" class="nav-link" data-nav="about">About Me</a>
+          </li>
+          <li id="skills-menu-item" class="relative">
+            <a
+              id="skills-menu-trigger"
+              href="#skills"
+              data-nav="skills"
+              aria-haspopup="true"
+              aria-expanded="false"
+              class="nav-link inline-flex items-center gap-1"
+            >
+              Technical Skills
+              <svg
+                id="skills-menu-chevron"
+                class="h-3 w-3 transition-transform duration-200"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </a>
+            <div id="skills-mega-menu" class="mega-menu"></div>
+          </li>
+          <li>
+            <a href="#projects" class="nav-link" data-nav="projects"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a href="#experience" class="nav-link" data-nav="experience"
+              >Experience</a
+            >
+          </li>
+          <li>
+            <a href="#certifications" class="nav-link" data-nav="certifications"
+              >Certifications</a
+            >
+          </li>
+        </ul>
+
+        <a href="#contact" class="btn-primary hidden md:inline-flex">
+          <span>Let's talk</span>
+        </a>
+
+        <button
+          id="menu-toggle"
+          aria-label="Toggle menu"
+          class="flex h-9 w-9 flex-col items-center justify-center gap-1.5 border border-ink-border shadow-md shadow-black/20 transition-all duration-300 hover:-translate-y-0.5 hover:border-amber hover:shadow-xl hover:shadow-black/40 md:hidden"
+        >
+          <span
+            class="h-px w-5 bg-ink_text-primary transition-all duration-300"
+            id="bar1"
+          ></span>
+          <span
+            class="h-px w-5 bg-ink_text-primary transition-all duration-300"
+            id="bar2"
+          ></span>
+        </button>
+      </nav>
+
+      <!-- Mobile menu -->
+      <ul
+        id="mobile-menu"
+        class="hidden flex-col gap-1 border-t border-ink-border bg-ink px-6 py-4 md:hidden"
+      >
+        <li>
+          <a href="#about" class="nav-link block py-2" data-nav="about"
+            >About Me</a
+          >
+        </li>
+        <li>
+          <a href="#skills" class="nav-link block py-2" data-nav="skills"
+            >Technical Skills</a
+          >
+        </li>
+        <li>
+          <a href="#projects" class="nav-link block py-2" data-nav="projects"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a
+            href="#experience"
+            class="nav-link block py-2"
+            data-nav="experience"
+            >Experience</a
+          >
+        </li>
+        <li>
+          <a
+            href="#certifications"
+            class="nav-link block py-2"
+            data-nav="certifications"
+            >Certifications</a
+          >
+        </li>
+      </ul>
+    </header>
+
+    <main>
+      <!-- HOME / HERO -->
+      <section
+        id="home"
+        class="relative flex min-h-screen items-center px-6 pt-32 pb-20 lg:px-10"
+      >
+        <div
+          class="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]"
+        >
+          <div class="reveal">
+            <p
+              class="mb-6 flex items-center gap-2 font-mono text-sm text-amber"
+            >
+              <span class="h-1.5 w-1.5 animate-blink rounded-full bg-amber"></span>
+              Available for opportunities
+            </p>
+
+            <h1
+              class="font-display text-5xl font-extrabold leading-[1.1] tracking-tighter text-ink_text-primary md:text-6xl"
+            >
+              Hi, I'm
+              <span id="hero-name" class="text-amber">Mayur Bagul</span>.
+              <br />
+              <span
+                id="role-ticker"
+                class="relative block h-[1.1em] overflow-hidden"
+              >
+                <span
+                  id="role-ticker-text"
+                  class="ticker-text absolute inset-0 font-extrabold tracking-tight text-amber"
+                  >Software Engineer</span
+                >
+              </span>
+            </h1>
+
+            <p
+              id="hero-summary"
+              class="mt-6 max-w-2xl text-base font-normal leading-relaxed text-ink_text-muted md:text-lg"
+            >
+              Loading summary…
+            </p>
+
+            <div class="mt-10 flex flex-wrap items-center gap-4">
+              <a href="#projects" class="btn-primary"
+                >View Projects <span aria-hidden="true">→</span></a
+              >
+              <a
+                id="resume-link"
+                href="#"
+                target="_blank"
+                rel="noopener"
+                class="btn-ghost"
+                >View Résumé</a
+              >
+            </div>
+
+            <div
+              id="hero-links"
+              class="mt-12 flex items-center gap-5 font-mono text-xs uppercase tracking-widest text-ink_text-muted"
+            >
+            </div>
+          </div>
+
+          <div
+            class="reveal mx-auto w-full max-w-sm"
+            style="transition-delay: 120ms"
+          >
+            <div class="relative -rotate-1">
+              <div
+                class="aspect-[4/5] w-full overflow-hidden rounded-2xl bg-ink"
+              >
+                <img
+                  id="profile-photo"
+                  src="assets/Coding.svg"
+                  alt="Illustration of a developer coding at a laptop"
+                  class="h-full w-full object-contain p-6"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="#about"
+          class="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-ink_text-muted transition-colors duration-300 hover:text-amber sm:flex"
+        >
+          Scroll
+          <span class="relative h-8 w-px overflow-hidden bg-ink-border">
+            <span
+              class="absolute left-0 top-0 h-3 w-px animate-scroll-line bg-amber"
+            ></span>
+          </span>
+        </a>
+      </section>
+
+      <!-- ABOUT ME -->
+      <section
+        id="about"
+        class="border-t border-ink-border px-6 py-24 lg:px-10"
+      >
+        <div class="mx-auto max-w-6xl">
+          <p class="section-tag">01 / About Me</p>
+
+          <div class="reveal max-w-2xl">
+            <h2 class="font-display text-2xl font-semibold sm:text-3xl">
+              A little about how I work.
+            </h2>
+            <p
+              id="about-summary"
+              class="mt-6 leading-relaxed text-ink_text-muted"
+            >
+              Loading…
+            </p>
+            <p class="mt-4 leading-relaxed text-ink_text-muted">
+              I care about clean architecture, readable code, and shipping
+              things that hold up under real usage, not just in a demo. Outside
+              of writing code, I enjoy debugging weird edge cases until they
+              make sense.
+            </p>
+
+            <dl
+              class="mt-10 grid grid-cols-2 gap-6 border-t border-ink-border pt-6 font-mono text-sm"
+            >
+              <div>
+                <dt class="text-ink_text-muted">Based in</dt>
+                <dd id="about-location" class="mt-1 text-ink_text-primary">
+                  —
+                </dd>
+              </div>
+              <div>
+                <dt class="text-ink_text-muted">Focus</dt>
+                <dd class="mt-1 text-ink_text-primary">
+                  Software Engineer
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <!-- TECHNICAL SKILLS -->
+      <section
+        id="skills"
+        class="border-t border-ink-border px-6 py-24 lg:px-10"
+      >
+        <div class="mx-auto max-w-6xl">
+          <p class="section-tag">02 / Technical Skills</p>
+          <h2 class="reveal font-display text-2xl font-semibold sm:text-3xl">
+            Tools I reach for.
+          </h2>
+
+          <div id="skills-grid" class="mt-12 space-y-10">
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section
+        id="projects"
+        class="border-t border-ink-border px-6 py-24 lg:px-10"
+      >
+        <div class="mx-auto max-w-6xl">
+          <p class="section-tag">03 / Projects</p>
+          <h2 class="reveal font-display text-2xl font-semibold sm:text-3xl">
+            Things I've built.
+          </h2>
+
+          <div
+            id="projects-grid"
+            class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+          >
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section
+        id="experience"
+        class="border-t border-ink-border px-6 py-24 lg:px-10"
+      >
+        <div class="mx-auto max-w-6xl">
+          <p class="section-tag">04 / Experience</p>
+          <h2 class="reveal font-display text-2xl font-semibold sm:text-3xl">
+            Where I've worked.
+          </h2>
+
+          <div
+            id="experience-list"
+            class="mt-14 space-y-0 border-l border-ink-border pl-8"
+          >
+          </div>
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS -->
+      <section
+        id="certifications"
+        class="border-t border-ink-border px-6 py-24 lg:px-10"
+      >
+        <div class="mx-auto max-w-6xl">
+          <p class="section-tag">05 / Certifications</p>
+          <h2 class="reveal font-display text-2xl font-semibold sm:text-3xl">
+            Credentials worth mentioning.
+          </h2>
+
+          <div
+            id="certifications-grid"
+            class="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2"
+          >
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT + IMPORTANT LINKS -->
+      <section
+        id="contact"
+        class="border-t border-ink-border px-6 py-24 lg:px-10"
+      >
+        <div class="mx-auto max-w-6xl">
+          <p class="section-tag">06 / Contact</p>
+
+          <div class="grid grid-cols-1 gap-16 lg:grid-cols-[0.8fr_1.2fr]">
+            <div class="reveal">
+              <h2 class="font-display text-2xl font-semibold sm:text-3xl">
+                Let's build something.
+              </h2>
+              <p class="mt-6 leading-relaxed text-ink_text-muted">
+                Have a role, project, or idea in mind? My inbox is open, and I try
+                to reply within a couple of days.
+              </p>
+
+              <a
+                id="contact-email"
+                href="mailto:mbagul30@gmail.com"
+                class="mt-8 inline-block font-mono text-lg text-amber hover:underline"
+              >
+                mbagul30@gmail.com
+              </a>
+
+              <h3
+                class="mt-14 mb-4 font-mono text-sm uppercase tracking-widest text-ink_text-muted"
+              >
+                Important Links
+              </h3>
+              <ul id="important-links" class="space-y-3 font-mono text-sm">
+              </ul>
+            </div>
+
+            <form
+              id="contact-form"
+              class="reveal card p-8"
+              style="transition-delay: 100ms"
+              novalidate
+            >
+              <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div class="sm:col-span-1">
+                  <label
+                    for="name"
+                    class="mb-2 block font-mono text-xs uppercase tracking-widest text-ink_text-muted"
+                    >Name</label
+                  >
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    class="w-full border border-ink-border bg-transparent px-4 py-3 text-sm text-ink_text-primary outline-none transition-colors focus:border-amber"
+                  />
+                </div>
+                <div class="sm:col-span-1">
+                  <label
+                    for="email"
+                    class="mb-2 block font-mono text-xs uppercase tracking-widest text-ink_text-muted"
+                    >Email</label
+                  >
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    class="w-full border border-ink-border bg-transparent px-4 py-3 text-sm text-ink_text-primary outline-none transition-colors focus:border-amber"
+                  />
+                </div>
+                <div class="sm:col-span-2">
+                  <label
+                    for="subject"
+                    class="mb-2 block font-mono text-xs uppercase tracking-widest text-ink_text-muted"
+                    >Subject</label
+                  >
+                  <input
+                    id="subject"
+                    name="subject"
+                    type="text"
+                    class="w-full border border-ink-border bg-transparent px-4 py-3 text-sm text-ink_text-primary outline-none transition-colors focus:border-amber"
+                  />
+                </div>
+                <div class="sm:col-span-2">
+                  <label
+                    for="message"
+                    class="mb-2 block font-mono text-xs uppercase tracking-widest text-ink_text-muted"
+                    >Message</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    class="w-full resize-none border border-ink-border bg-transparent px-4 py-3 text-sm text-ink_text-primary outline-none transition-colors focus:border-amber"
+                  ></textarea>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                id="contact-submit"
+                class="btn-primary mt-6 w-full justify-center sm:w-auto"
+              >
+                Send Message <span aria-hidden="true">→</span>
+              </button>
+
+              <p
+                id="contact-status"
+                class="mt-4 font-mono text-sm"
+                role="status"
+                aria-live="polite"
+              ></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-ink-border px-6 py-8 lg:px-10">
+      <div
+        class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 font-mono text-xs text-ink_text-muted sm:flex-row"
+      >
+        <p>&copy; <span id="year"></span> Mayur Bagul</p>
+        <a href="#home" class="hover:text-amber">Back to top ↑</a>
+      </div>
+    </footer>
+
+    <!-- PORTFOLIO ASSISTANT (FAQ chatbot) -->
+    <div id="chatbot-root" class="fixed bottom-6 right-6 z-40">
+      <button
+        id="chatbot-toggle"
+        type="button"
+        aria-label="Open portfolio assistant"
+        aria-expanded="false"
+        class="flex h-14 w-14 items-center justify-center rounded-full border border-amber bg-amber text-ink shadow-lg shadow-black/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/40"
+      >
+        <svg id="chatbot-icon-open" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z" />
+        </svg>
+        <svg id="chatbot-icon-close" class="hidden h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18M6 6l12 12" />
+        </svg>
+      </button>
+
+      <div id="chatbot-panel" class="chat-panel">
+        <div class="flex items-center justify-between border-b border-ink-border px-4 py-3">
+          <p class="font-mono text-xs uppercase tracking-widest text-amber">Ask about Mayur</p>
+        </div>
+        <div id="chatbot-messages" class="flex-1 space-y-3 overflow-y-auto px-4 py-4 text-sm"></div>
+        <div id="chatbot-quick-replies" class="flex flex-wrap gap-2 border-t border-ink-border px-4 py-3"></div>
+        <form id="chatbot-form" class="flex items-center gap-2 border-t border-ink-border p-3">
+          <input
+            id="chatbot-input"
+            type="text"
+            placeholder="Ask a question…"
+            autocomplete="off"
+            class="flex-1 border border-ink-border bg-transparent px-3 py-2 text-sm text-ink_text-primary outline-none transition-colors focus:border-amber"
+          />
+          <button type="submit" class="btn-primary !px-3 !py-2 text-xs">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/cursor-fx.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+  </body>
+</html>
