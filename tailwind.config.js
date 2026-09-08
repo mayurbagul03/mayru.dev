@@ -23,8 +23,8 @@ module.exports = {
       },
       fontFamily: {
         display: ["'Plus Jakarta Sans'", "sans-serif"],
-        body: ["'Inter'", "sans-serif"],
-        mono: ["'Inter'", "sans-serif"],
+        body: ["'Plus Jakarta Sans'", "sans-serif"],
+        mono: ["'Plus Jakarta Sans'", "sans-serif"],
       },
       fontSize: {
         "fluid-h1": [
