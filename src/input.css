@@ -9,6 +9,13 @@
   body {
     background-color: #0d1117;
     color: #f0f6fc;
+    line-height: 1.6;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1.2;
   }
   ::selection {
     background-color: rgba(245, 158, 11, 0.35);

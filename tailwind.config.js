@@ -23,8 +23,18 @@ module.exports = {
       },
       fontFamily: {
         display: ["'Plus Jakarta Sans'", "sans-serif"],
-        body: ["'Plus Jakarta Sans'", "sans-serif"],
+        body: ["'Inter'", "sans-serif"],
         mono: ["'JetBrains Mono'", "monospace"],
+      },
+      fontSize: {
+        "fluid-h1": [
+          "clamp(2.75rem, 2.1rem + 2.6vw, 4.25rem)",
+          { lineHeight: "1.08", letterSpacing: "-0.02em" },
+        ],
+        "fluid-h2": [
+          "clamp(1.75rem, 1.55rem + 0.9vw, 2.25rem)",
+          { lineHeight: "1.2", letterSpacing: "-0.01em" },
+        ],
       },
       backgroundImage: {
         "grid-pattern":
