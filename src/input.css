@@ -39,7 +39,7 @@
 
 @layer components {
   .section-tag {
-    @apply flex items-center gap-3 font-mono text-xs tracking-[0.3em] text-amber uppercase mb-10;
+    @apply flex items-center gap-3 font-display text-xs tracking-[0.3em] text-amber uppercase mb-10;
   }
   .section-tag::after {
     content: "";
