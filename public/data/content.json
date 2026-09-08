@@ -36,7 +36,7 @@
       "title": "Expense Tracker App",
       "description": "A personal finance tracker I built mostly for myself, to log expenses, tag them by category, and see where the money actually goes each month.",
       "stack": ["JavaScript", "Node.js", "Chart.js"],
-      "github": "https://github.com/mayurbagul03/expenses_app",
+      "github": "https://github.com/mayurbagul03/Expenses-Tracker",
       "demo": ""
     },
     {
