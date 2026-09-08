@@ -28,7 +28,7 @@
       "title": "E-Commerce Website",
       "description": "A full e-commerce build, catalog, cart, checkout, the works. I spent more time than I expected just getting the data model right, since a messy schema here makes everything downstream harder.",
       "stack": ["Node.js", "Express", "MongoDB", "JavaScript"],
-      "github": "https://github.com/mayurbagul03/eccomerce-wesite",
+      "github": "https://github.com/mayurbagul03/ecommerce-store",
       "demo": ""
     },
     {
