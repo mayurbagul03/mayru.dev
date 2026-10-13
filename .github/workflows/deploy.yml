@@ -30,8 +30,8 @@ jobs:
       - name: Upload code
         run: |
           rsync -avz --delete \
-            --exclude '.git' --exclude '.github' --exclude 'node_modules' \
-            --exclude 'netlify' --exclude '.env' --exclude 'data' \
+               --exclude '/.git' --exclude '/.github' --exclude '/node_modules' \
+               --exclude '/netlify' --exclude '/.env' --exclude '/data' \
             ./ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/portfolio/
 
       - name: Install deps & restart server
