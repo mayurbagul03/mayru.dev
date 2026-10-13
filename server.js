@@ -9,6 +9,7 @@ const rateLimit = require("express-rate-limit");
 const nodemailer = require("nodemailer");
 
 const app = express();
+app.set("trust proxy", 1);
 const PORT = process.env.PORT || 3000;
 const DATA_DIR = path.join(__dirname, "data");
 const MESSAGES_FILE = path.join(DATA_DIR, "messages.json");
